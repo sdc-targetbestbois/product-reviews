@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./Header.js"
 
 export default class App extends Component {
   constructor() {
@@ -9,8 +10,8 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div>
-        <p>{this.state.message}</p>
+      <div class="mainContainer">
+        <Header />
       </div>
     );
   }
