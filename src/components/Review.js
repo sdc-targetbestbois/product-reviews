@@ -1,13 +1,13 @@
 import React from "react";
 
 
-const ReviewList = (props) => {
+const Review = (props) => {
   return (
     <div>
-      This is review list
+      Example Review
     </div>
 
   )
 }
 
-export default ReviewList;
+export default Review;

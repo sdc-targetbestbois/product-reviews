@@ -5,8 +5,17 @@ var connection = mysql.createConnection({
   password : 'cheesedood123',
   database : 'rex_component'
 });
- 
+
 connection.connect();
- 
-connection.query('SELECT 1 + 1 AS solution', function (error, results))
-});
+
+var getAllReviews = function(cb) {
+  connection.query("select * from reviews", (err, results) => {
+    if (err) {
+      console.log("error getting all user data")
+      cb(err, null);
+    }
+    cb(null, results);
+  })
+};
+
+module.exports.getAllReviews = getAllReviews;
