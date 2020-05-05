@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header.js"
+import ReviewList from "./ReviewList.js"
 
 export default class App extends Component {
   constructor() {
@@ -12,6 +13,7 @@ export default class App extends Component {
     return (
       <div class="mainContainer">
         <Header />
+        <ReviewList />
       </div>
     );
   }
