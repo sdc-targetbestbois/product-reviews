@@ -14,9 +14,7 @@ export default class App extends Component {
   componentDidMount() {
     Axios.get('/api/reviews')
     .then((response) => {
-      this.setState({reviews: response.data}, () => {
-        console.log("component did mount")
-      })
+      this.setState({reviews: response.data})
     })
     .catch((error) => {
       console.log("error getting all users clientside:", error);
