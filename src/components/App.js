@@ -7,14 +7,14 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      reviews: [],
+      allReviews: [],
     };
   }
 
   componentDidMount() {
     Axios.get('/api/reviews')
     .then((response) => {
-      this.setState({reviews: response.data})
+      this.setState({allReviews: response.data})
     })
     .catch((error) => {
       console.log("error getting all users clientside:", error);
@@ -25,7 +25,7 @@ export default class App extends Component {
     return (
       <div class="mainContainer">
         <Header />
-        <ReviewList reviews={this.state.reviews}/>
+        <ReviewList reviews={this.state.allReviews}/>
       </div>
     );
   }
