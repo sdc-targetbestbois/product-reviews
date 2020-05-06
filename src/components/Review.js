@@ -1,10 +1,10 @@
 import React from "react";
 
 
-const Review = (props) => {
+const Review = ({review}) => {
   return (
     <div>
-      Example Review
+
     </div>
 
   )

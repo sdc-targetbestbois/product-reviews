@@ -2,12 +2,17 @@ import React from "react";
 import Review from "./Review.js"
 
 
-const ReviewList = (props) => {
+const ReviewList = ({reviews}) => {
+  console.log(reviews)
   return (
     <div>
-      <Review />
-      <Review />
-      <Review />
+      {
+        reviews.map((current) => {
+          return (
+            <span>{current.reviewText}</span>
+          )
+        })
+      }
     </div>
 
   )

@@ -6,14 +6,17 @@ import ReviewList from "./ReviewList.js";
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {};
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.state = {
+      reviews: [],
+    };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     Axios.get('/api/reviews')
     .then((response) => {
-      this.setState({users: response.data})
+      this.setState({reviews: response.data}, () => {
+        console.log("component did mount")
+      })
     })
     .catch((error) => {
       console.log("error getting all users clientside:", error);
@@ -24,7 +27,7 @@ export default class App extends Component {
     return (
       <div class="mainContainer">
         <Header />
-        <ReviewList />
+        <ReviewList reviews={this.state.reviews}/>
       </div>
     );
   }
