@@ -1,5 +1,8 @@
 .review {
-  border: 1px solid black ;
-  width: 100%;
-  height: 150px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(214, 214, 214);
+  border-image: initial;
+  border-radius: 4px;
+  padding: 20px;
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import Review from "./Review.js"
-import css from "../styles/review.css"
+import reviewCSS from "../styles/review.css"
+import reviewListCSS from "../styles/reviewList.css"
 
 
 const ReviewList = ({reviews}) => {
   return (
-    <div>
+    <div class="reviewList">
       {
         reviews.map((current) => {
           return (

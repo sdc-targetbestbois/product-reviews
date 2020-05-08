@@ -19,6 +19,8 @@ export default class App extends Component {
     this.handleClick5 = this.handleClick5.bind(this);
   }
 
+
+  //TODO Refactor into one click handler
   handleClickAll(e) {
     e.preventDefault();
     this.setState({currentReviews: this.state.allReviews})
@@ -28,7 +30,7 @@ export default class App extends Component {
     let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 1) {
-        threeStarReviews.push(current);
+        matchingReviews.push(current);
       }
     })
     this.setState({currentReviews: matchingReviews});
@@ -38,7 +40,7 @@ export default class App extends Component {
     let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 2) {
-        threeStarReviews.push(current);
+        matchingReviews.push(current);
       }
     })
     this.setState({currentReviews: matchingReviews});
@@ -48,7 +50,7 @@ export default class App extends Component {
     let threeStarReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 3) {
-        threeStarReviews.push(current);
+        matchingReviews.push(current);
       }
     })
     this.setState({currentReviews: threeStarReviews});
@@ -58,7 +60,7 @@ export default class App extends Component {
     let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 4) {
-        threeStarReviews.push(current);
+        matchingReviews.push(current);
       }
     })
     this.setState({currentReviews: matchingReviews});;
@@ -68,7 +70,7 @@ export default class App extends Component {
     let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 5) {
-        threeStarReviews.push(current);
+        matchingReviews.push(current);
       }
     })
     this.setState({currentReviews: matchingReviews});

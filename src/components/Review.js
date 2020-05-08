@@ -1,4 +1,5 @@
 import React from "react";
+import StarRatings from 'react-star-ratings'
 
 
 const Review = ({review}) => {
@@ -6,7 +7,12 @@ const Review = ({review}) => {
     <div>
       <p>{review.title}</p>
       <p>{review.user}</p>
-      <p>{review.stars}</p>
+      <StarRatings
+        starDimenstion='4px'
+        rating={review.stars}
+        starRatedColor='yellow'
+        numberOfStars={5}
+      />
       <p>{review.reviewText}</p>
     </div>
 
