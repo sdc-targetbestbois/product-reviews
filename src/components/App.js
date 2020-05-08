@@ -25,33 +25,53 @@ export default class App extends Component {
   }
   handleClick1(e) {
     e.preventDefault();
-    let threeStarReviews = [];
+    let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
-      // error is that this is undefined
-      if (current.stars === 3) {
+      if (current.stars === 1) {
         threeStarReviews.push(current);
       }
-
     })
-    console.log(threeStarReviews)
-    this.setState({currentReviews: threeStarReviews})
-    console.log('The link was clicked 1.');
+    this.setState({currentReviews: matchingReviews});
   }
   handleClick2(e) {
     e.preventDefault();
-    console.log('The link was clicked 2.');
+    let matchingReviews = [];
+    this.state.allReviews.forEach((current) => {
+      if (current.stars === 2) {
+        threeStarReviews.push(current);
+      }
+    })
+    this.setState({currentReviews: matchingReviews});
   }
   handleClick3(e) {
     e.preventDefault();
-    console.log('The link was clicked 3.');
+    let threeStarReviews = [];
+    this.state.allReviews.forEach((current) => {
+      if (current.stars === 3) {
+        threeStarReviews.push(current);
+      }
+    })
+    this.setState({currentReviews: threeStarReviews});
   }
   handleClick4(e) {
     e.preventDefault();
-    console.log('The link was clicked 4.');
+    let matchingReviews = [];
+    this.state.allReviews.forEach((current) => {
+      if (current.stars === 4) {
+        threeStarReviews.push(current);
+      }
+    })
+    this.setState({currentReviews: matchingReviews});;
   }
   handleClick5(e) {
     e.preventDefault();
-    console.log('The link was clicked 5.');
+    let matchingReviews = [];
+    this.state.allReviews.forEach((current) => {
+      if (current.stars === 5) {
+        threeStarReviews.push(current);
+      }
+    })
+    this.setState({currentReviews: matchingReviews});
   }
 
 
