@@ -13,8 +13,9 @@ class Header extends React.Component {
   }
 
 
-  handleClick () {
-
+  handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
   }
 
   render() {
@@ -23,13 +24,15 @@ class Header extends React.Component {
           Guest Rating and Reviews
         <h1> 4.8 </h1>
         <Stars />
-        <div>
+        {/*<div>
           <button> Write a Review</button>
-        </div>
+        </div>*/}
           <div class="dropdown">
             <button class="dropbtn">Filter by</button>
               <div class="dropdown-content">
-                <p>All ratings</p>
+              <a href="#" onClick={this.handleClick}>
+                Click me
+              </a>
                 <p>5 stars</p>
                 <p>4 stars</p>
                 <p>3 stars</p>
