@@ -11,14 +11,30 @@ export default class App extends Component {
       allReviews: [],
       currentReviews: [],
     };
+    this.handleClickAll = this.handleClickAll.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
+    this.handleClick4 = this.handleClick4.bind(this);
+    this.handleClick5 = this.handleClick5.bind(this);
   }
 
   handleClickAll(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    this.setState({currentReviews: this.state.allReviews})
   }
   handleClick1(e) {
     e.preventDefault();
+    let threeStarReviews = [];
+    this.state.allReviews.forEach((current) => {
+      // error is that this is undefined
+      if (current.stars === 3) {
+        threeStarReviews.push(current);
+      }
+
+    })
+    console.log(threeStarReviews)
+    this.setState({currentReviews: threeStarReviews})
     console.log('The link was clicked 1.');
   }
   handleClick2(e) {
@@ -42,7 +58,10 @@ export default class App extends Component {
   componentDidMount() {
     Axios.get('/api/reviews')
     .then((response) => {
-      this.setState({allReviews: response.data})
+      this.setState({
+        allReviews: response.data,
+        currentReviews: response.data
+      })
     })
     .catch((error) => {
       console.log("error getting all users clientside:", error);
@@ -54,6 +73,7 @@ export default class App extends Component {
       <div class="mainContainer">
 
         {/* HEADER HERE */}
+
         <div class="header">
             Guest Rating and Reviews
           <h1> 4.8 </h1>
@@ -70,7 +90,10 @@ export default class App extends Component {
                 </div>
             </div>
         </div>
-        <ReviewList reviews={this.state.allReviews}/>
+
+        {/*REVIEWS*/}
+
+        <ReviewList reviews={this.state.currentReviews}/>
       </div>
     );
   }
