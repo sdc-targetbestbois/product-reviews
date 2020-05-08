@@ -5,6 +5,7 @@ const Review = ({review}) => {
   return (
     <div>
       <p>{review.title}</p>
+      <p>{review.user}</p>
       <p>{review.stars}</p>
       <p>{review.reviewText}</p>
     </div>
