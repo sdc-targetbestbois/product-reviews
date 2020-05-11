@@ -1,0 +1,23 @@
+import React from "react";
+import StarRatings from 'react-star-ratings'
+
+
+const Review = ({review}) => {
+  return (
+    <div>
+      <p>{review.title}</p>
+      <p>{review.user}</p>
+      <StarRatings
+        starDimension='18px'
+        starSpacing='2px'
+        rating={review.stars}
+        starRatedColor='yellow'
+        numberOfStars={5}
+      />
+      <p>{review.reviewText}</p>
+    </div>
+
+  )
+}
+
+export default Review;
