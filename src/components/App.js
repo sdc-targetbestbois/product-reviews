@@ -79,7 +79,7 @@ export default class App extends Component {
 
 
   componentDidMount() {
-    Axios.get('/api/reviews')
+    Axios.get('http://localhost:8080/api/reviews')
     .then((response) => {
       this.setState({
         allReviews: response.data,
@@ -93,9 +93,9 @@ export default class App extends Component {
 
   render() {
     console.log(this.state.allReviews)
+    //* code that calculates average*//
     let numberOfReviews = 0;
     let aggregateOfStars = 0;
-
     this.state.allReviews.forEach((currentValue) => {
             aggregateOfStars += currentValue.stars;
             //console.log(aggregateOfStars, currentValue.stars);
@@ -118,6 +118,8 @@ export default class App extends Component {
               starRatedColor='yellow'
               numberOfStars={5}
             />
+            <p>{numberOfReviews} star ratings</p>
+            {/* DROPDOWN HERE */}
             </div>
             <div className="dropdown">
               <button className="dropbtn">Filter by</button>

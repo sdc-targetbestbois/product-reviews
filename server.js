@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
 var db = require('./queries');
+var cors = require('cors')
 
-app.use(express.static(__dirname + "/dist"))
+app.use(express.static(__dirname + "/dist"));
 
+app.use(cors());
 
-app.use(express.json())
+app.use(express.json());
 
 app.get('/api/reviews', function (req, res) {
   db.getAllReviews((err,data) => {
