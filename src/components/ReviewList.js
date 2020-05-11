@@ -6,11 +6,11 @@ import reviewListCSS from "../styles/reviewList.css"
 
 const ReviewList = ({reviews}) => {
   return (
-    <div class="reviewList">
+    <div className="reviewList">
       {
-        reviews.map((current) => {
+        reviews.map((current, index) => {
           return (
-            <div class="review"><Review review={current}/></div>
+            <div key={index} className="review"><Review review={current}/></div>
           )
         })
       }

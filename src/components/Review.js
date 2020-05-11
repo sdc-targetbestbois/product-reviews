@@ -8,7 +8,8 @@ const Review = ({review}) => {
       <p>{review.title}</p>
       <p>{review.user}</p>
       <StarRatings
-        starDimenstion='4px'
+        starDimension='18px'
+        starSpacing='2px'
         rating={review.stars}
         starRatedColor='yellow'
         numberOfStars={5}
