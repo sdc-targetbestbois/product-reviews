@@ -48,13 +48,13 @@ export default class App extends Component {
   }
   handleClick3(e) {
     e.preventDefault();
-    let threeStarReviews = [];
+    let matchingReviews = [];
     this.state.allReviews.forEach((current) => {
       if (current.stars === 3) {
         matchingReviews.push(current);
       }
     })
-    this.setState({currentReviews: threeStarReviews});
+    this.setState({currentReviews: matchingReviews});
   }
   handleClick4(e) {
     e.preventDefault();
@@ -92,20 +92,17 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.allReviews)
     //* code that calculates average*//
     let numberOfReviews = 0;
     let aggregateOfStars = 0;
     this.state.allReviews.forEach((currentValue) => {
             aggregateOfStars += currentValue.stars;
-            //console.log(aggregateOfStars, currentValue.stars);
             numberOfReviews += 1;
           })
     let reviewAvg = aggregateOfStars / numberOfReviews;
     return (
       <div className="mainContainer">
         {/* HEADER HERE */}
-        {console.log(aggregateOfStars)}
 
         <div className="header">
             Guest Rating and Reviews
