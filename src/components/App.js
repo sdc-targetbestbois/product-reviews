@@ -78,6 +78,7 @@ export default class App extends Component {
   }
 
 
+  //TODO: find items based on item review. in sorter, if rating AND id match display. 
   componentDidMount() {
     Axios.get('http://localhost:8080/api/reviews')
     .then((response) => {
