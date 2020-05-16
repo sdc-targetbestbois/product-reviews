@@ -14,7 +14,7 @@ const Review = ({review}) => {
         starRatedColor='yellow'
         numberOfStars={5}
         />
-        {review.stars > 2 && <p>would recommend</p>}
+        {review.stars > 2 ? <p>would recommend</p> : <p>Would not recommend</p>}
       </div>
       <p style={{fontSize: "12px", marginTop: "4px"}}>{review.user} - 4 days ago, Verified purchaser</p>
       <div style={{marginTop: "16px"}}></div>
