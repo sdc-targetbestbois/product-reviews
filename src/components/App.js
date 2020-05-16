@@ -84,7 +84,7 @@ export default class App extends Component {
     const search = document.getElementById('searchInputForm');
     if (search) {
       search.addEventListener('submit', () => {
-        this.getMain(search.name);
+        this.getReviews(search.name);
       })
     }
   }
