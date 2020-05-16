@@ -78,9 +78,19 @@ export default class App extends Component {
   }
 
 
-  //TODO: find items based on item review. in sorter, if rating AND id match display. 
+  //TODO: find items based on item review. in sorter, if rating AND id match display.
   componentDidMount() {
-    Axios.get('http://localhost:8080/api/reviews')
+    this.getReviews(1);
+    const search = document.getElementById('searchInputForm');
+    if (search) {
+      search.addEventListener('submit', () => {
+        this.getMain(search.name);
+      })
+    }
+  }
+
+  getReviews(id) {
+    Axios.get(`http://localhost:8080/api/reviews/${id}`)
     .then((response) => {
       this.setState({
         allReviews: response.data,

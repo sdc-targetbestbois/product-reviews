@@ -9,8 +9,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get('/api/reviews', function (req, res) {
-  db.getAllReviews((err,data) => {
+app.get('/api/reviews/:id', function (req, res) {
+  db.getAllReviews(Number(req.params.id),(err,data) => {
     if (err) {
       console.log("error getting all users data in server")
       res.send("error getting all users data in server")
