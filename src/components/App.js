@@ -90,7 +90,7 @@ export default class App extends Component {
   }
 
   getReviews(id) {
-    Axios.get(`http://localhost:8080/api/reviews/${id}`)
+    Axios.get(`http://rexscomponenet-env.eba-psqhbjkk.us-west-2.elasticbeanstalk.com//api/reviews/${id}`)
     .then((response) => {
       this.setState({
         allReviews: response.data,
@@ -136,9 +136,9 @@ export default class App extends Component {
             {/* DROPDOWN HERE */}
             <div className="drop-downBar">
               <div className="dropdown">
-                <button className="dropbtn">Filter by</button>
+                <button className="dropbtn">sort by :</button>
                   <div className="dropdown-content">
-                    <a href="#" onClick={this.handleClickAll}> All Reviews</a>
+                    <a href="#" onClick={this.handleClickAll}> all Ratings</a>
                     <a href="#" onClick={this.handleClick1}> 1 Stars</a>
                     <a href="#" onClick={this.handleClick2}> 2 Stars</a>
                     <a href="#" onClick={this.handleClick3}> 3 Stars</a>
