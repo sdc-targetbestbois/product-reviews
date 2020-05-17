@@ -2,6 +2,8 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4285;
 }
 
 .myHeader {
@@ -10,6 +12,27 @@
   border: black;
   border-width: 5px;
   text-align: center;
+}
+
+.ratingsAndReviews {
+  font-size: 23px;
+}
+
+.numberOfReviews {
+  font-size: 14px;
+  margin: 0px;
+}
+
+.starAverage {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.drop-downBar{
+  padding: 16px;
+  background-color: rgb(247, 247, 247);
+
 }
 
 /* Style The Dropdown Button */

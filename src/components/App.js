@@ -110,37 +110,45 @@ export default class App extends Component {
             aggregateOfStars += currentValue.stars;
             numberOfReviews += 1;
           })
-    let reviewAvg = aggregateOfStars / numberOfReviews;
+
+    var reviewAvg = 0;
+
+    if (numberOfReviews) {
+    var reviewAvg = Math.round(aggregateOfStars / numberOfReviews * 10) / 10;
+    }
     return (
       <div className="mainContainer">
         {/* HEADER HERE */}
 
         <div className="myHeader">
-            Guest Rating and Reviews
+            <p className="ratingsAndReviews">Guest Rating and Reviews</p>
             <div>
-              <h1>{reviewAvg}</h1>
+              <p className="starAverage">{reviewAvg}</p>
             <StarRatings
-              starDimension='18px'
+              starDimension='25px'
               starSpacing='2px'
               rating={reviewAvg || 0}
               starRatedColor='yellow'
               numberOfStars={5}
             />
-            <p>{numberOfReviews} star ratings</p>
-            {/* DROPDOWN HERE */}
+            <p className="numberOfReviews">{numberOfReviews} star ratings</p>
             </div>
-            <div className="dropdown">
-              <button className="dropbtn">Filter by</button>
-                <div className="dropdown-content">
-                  <a href="#" onClick={this.handleClickAll}> All Reviews</a>
-                  <a href="#" onClick={this.handleClick1}> 1 Stars</a>
-                  <a href="#" onClick={this.handleClick2}> 2 Stars</a>
-                  <a href="#" onClick={this.handleClick3}> 3 Stars</a>
-                  <a href="#" onClick={this.handleClick4}> 4 Stars</a>
-                  <a href="#" onClick={this.handleClick5}> 5 Stars</a>
-                </div>
+            {/* DROPDOWN HERE */}
+            <div className="drop-downBar">
+              <div className="dropdown">
+                <button className="dropbtn">Filter by</button>
+                  <div className="dropdown-content">
+                    <a href="#" onClick={this.handleClickAll}> All Reviews</a>
+                    <a href="#" onClick={this.handleClick1}> 1 Stars</a>
+                    <a href="#" onClick={this.handleClick2}> 2 Stars</a>
+                    <a href="#" onClick={this.handleClick3}> 3 Stars</a>
+                    <a href="#" onClick={this.handleClick4}> 4 Stars</a>
+                    <a href="#" onClick={this.handleClick5}> 5 Stars</a>
+                  </div>
+              </div>
             </div>
         </div>
+
 
         {/*REVIEWS*/}
 
