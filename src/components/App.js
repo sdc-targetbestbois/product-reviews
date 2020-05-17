@@ -95,6 +95,17 @@ export default class App extends Component {
       this.setState({
         allReviews: response.data,
         currentReviews: response.data
+      }, () => {
+        let total = 0;
+        const reviewCount = this.state.currentReviews.length;
+        this.state.currentReviews.forEach(review => {
+          total += review.stars;
+        })
+        const avg = total / reviewCount;
+        const numReviews = new CustomEvent('reviews', {
+          detail: {reviews: reviewCount, rating: avg}
+        })
+        document.dispatchEvent(numReviews)
       })
     })
     .catch((error) => {
