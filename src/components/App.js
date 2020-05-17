@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import StarRatings from 'react-star-ratings'
 import ReviewList from "./ReviewList.js";
-import css from "../styles/header.css";
+import css from "../styles/main.css";
 import Stars from "./Stars.js"
 
 export default class App extends Component {
@@ -84,13 +84,13 @@ export default class App extends Component {
     const search = document.getElementById('searchInputForm');
     if (search) {
       search.addEventListener('submit', () => {
-        this.getMain(search.name);
+        this.getReviews(search.name);
       })
     }
   }
 
   getReviews(id) {
-    Axios.get(`http://localhost:8080/api/reviews/${id}`)
+    Axios.get(`http://rexscomponenet-env.eba-psqhbjkk.us-west-2.elasticbeanstalk.com/api/reviews/${id}`)
     .then((response) => {
       this.setState({
         allReviews: response.data,
@@ -110,37 +110,45 @@ export default class App extends Component {
             aggregateOfStars += currentValue.stars;
             numberOfReviews += 1;
           })
-    let reviewAvg = aggregateOfStars / numberOfReviews;
+
+    var reviewAvg = 0;
+
+    if (numberOfReviews) {
+    var reviewAvg = Math.round(aggregateOfStars / numberOfReviews * 10) / 10;
+    }
     return (
       <div className="mainContainer">
         {/* HEADER HERE */}
 
-        <div className="header">
-            Guest Rating and Reviews
+        <div className="myHeader">
+            <p className="ratingsAndReviews">Guest Rating and Reviews</p>
             <div>
-              <h1>{reviewAvg}</h1>
+              <p className="starAverage">{reviewAvg}</p>
             <StarRatings
-              starDimension='18px'
+              starDimension='25px'
               starSpacing='2px'
               rating={reviewAvg || 0}
               starRatedColor='yellow'
               numberOfStars={5}
             />
-            <p>{numberOfReviews} star ratings</p>
-            {/* DROPDOWN HERE */}
+            <p className="numberOfReviews">{numberOfReviews} star ratings</p>
             </div>
-            <div className="dropdown">
-              <button className="dropbtn">Filter by</button>
-                <div className="dropdown-content">
-                  <a href="#" onClick={this.handleClickAll}> All Reviews</a>
-                  <a href="#" onClick={this.handleClick1}> 1 Stars</a>
-                  <a href="#" onClick={this.handleClick2}> 2 Stars</a>
-                  <a href="#" onClick={this.handleClick3}> 3 Stars</a>
-                  <a href="#" onClick={this.handleClick4}> 4 Stars</a>
-                  <a href="#" onClick={this.handleClick5}> 5 Stars</a>
-                </div>
+            {/* DROPDOWN HERE */}
+            <div className="drop-downBar">
+              <div className="dropdown">
+                <button className="dropbtn">sort by :</button>
+                  <div className="dropdown-content">
+                    <a href="#" onClick={this.handleClickAll}> all Ratings</a>
+                    <a href="#" onClick={this.handleClick1}> 1 Stars</a>
+                    <a href="#" onClick={this.handleClick2}> 2 Stars</a>
+                    <a href="#" onClick={this.handleClick3}> 3 Stars</a>
+                    <a href="#" onClick={this.handleClick4}> 4 Stars</a>
+                    <a href="#" onClick={this.handleClick5}> 5 Stars</a>
+                  </div>
+              </div>
             </div>
         </div>
+
 
         {/*REVIEWS*/}
 

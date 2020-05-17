@@ -7,7 +7,26 @@
   padding: 20px;
   text-align: left;
   margin-top: 16px;
-  font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.4285;
 
+}
+
+.userLine {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.reviewTitle {
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+.recommendBar {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.stars {
+  margin-right: 5px;
 }
