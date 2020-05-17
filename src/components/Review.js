@@ -1,12 +1,13 @@
 import React from "react";
 import StarRatings from 'react-star-ratings'
+import css from "../styles/review.css"
 
 
 const Review = ({review}) => {
   return (
     <div>
-      <h4 style={{marginBottom: "8px", marginTop: "0px"}}>{review.title}</h4>
-      <div style={{display: "inline-block" }}>
+      <h4 className="reviewTitle">{review.title}</h4>
+      <div className="stars">
         <StarRatings
         starDimension='18px'
         starSpacing='0px'
@@ -16,8 +17,7 @@ const Review = ({review}) => {
         />
         {review.stars > 2 ? <p>would recommend</p> : <p>Would not recommend</p>}
       </div>
-      <p style={{fontSize: "12px", marginTop: "4px"}}>{review.user} - 4 days ago, Verified purchaser</p>
-      <div style={{marginTop: "16px"}}></div>
+      <p className="userLine">{review.user} - 4 days ago, Verified purchaser</p>
       <p>{review.reviewText}</p>
     </div>
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import StarRatings from 'react-star-ratings'
 import ReviewList from "./ReviewList.js";
-import css from "../styles/header.css";
+import css from "../styles/main.css";
 import Stars from "./Stars.js"
 
 export default class App extends Component {
@@ -115,7 +115,7 @@ export default class App extends Component {
       <div className="mainContainer">
         {/* HEADER HERE */}
 
-        <div className="header">
+        <div className="myHeader">
             Guest Rating and Reviews
             <div>
               <h1>{reviewAvg}</h1>
