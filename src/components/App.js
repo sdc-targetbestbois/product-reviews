@@ -90,11 +90,22 @@ export default class App extends Component {
   }
 
   getReviews(id) {
-    Axios.get(`http://rexscomponenet-env.eba-psqhbjkk.us-west-2.elasticbeanstalk.com/api/reviews/${id}`)
+    Axios.get(`http://localhost:8080/api/reviews/${id}`)
     .then((response) => {
       this.setState({
         allReviews: response.data,
         currentReviews: response.data
+      }, () => {
+        let total = 0;
+        const reviewCount = this.state.currentReviews.length;
+        this.state.currentReviews.forEach(review => {
+          total += review.stars;
+        })
+        const avg = total / reviewCount;
+        const numReviews = new CustomEvent('reviews', {
+          detail: {reviews: reviewCount, rating: avg}
+        })
+        document.dispatchEvent(numReviews)
       })
     })
     .catch((error) => {
