@@ -2,41 +2,34 @@
   "name": "componentrex",
   "version": "1.0.0",
   "description": "The review functionality of target page",
-  "main": "App.js",
+  "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
+    "mysql": "^2.13.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-star-ratings": "^2.3.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "react-star-ratings": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
+    "react-hot-loader": "^4.3.11",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
-    "mini-css-extract-plugin": "^0.9.0",
-    "style-loader": "^1.2.1"
+    "mini-css-extract-plugin": "^0.9.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Team-Target/ComponentRex.git"
+    "dev": "webpack -d --w",
+    "start": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Team-Target/ComponentRex/issues"
-  },
-  "homepage": "https://github.com/Team-Target/ComponentRex#readme"
+  "license": "ISC"
 }

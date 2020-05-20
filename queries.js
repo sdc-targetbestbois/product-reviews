@@ -1,12 +1,14 @@
 var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'database-1.cpsmzmzc7yet.us-west-2.rds.amazonaws.com',
-  user     : 'admin',
-  password : 'cheesedood123',
-  database : 'rex_component'
-});
+const mysqlConfig = require('./config.js');
+var connection = mysql.createConnection(mysqlConfig);
 
-connection.connect();
+connection.connect((err) => {
+  if(err){
+    console.log("err in db connection",err)
+  }else{
+    console.log("connected db")
+  }
+});
 
 var getAllReviews = function(id, cb) {
   connection.query("select * from reviews where id=?", [id], (err, results) => {

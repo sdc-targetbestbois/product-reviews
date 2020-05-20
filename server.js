@@ -19,4 +19,10 @@ app.get('/api/reviews/:id', function (req, res) {
   })
 });
 
-app.listen(8080, console.log("app is running hot on 8080!"))
+app.listen(8080, (err)=>{
+  if(err){
+  console.log("App.listen broke")
+}else{
+  console.log("server running successfully on 8080")
+}
+});
