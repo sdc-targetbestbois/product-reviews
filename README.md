@@ -3,8 +3,8 @@
 ## Using this Repository
 
 -- npm install
--- npm run dev will build a dist folder and watch for changes made
--- npm start will launch a react hot server that will refresh on changes.
+-- npm run dev will build a dist folder and watch for changes made (webpack)
+-- npm run start will launch a nodemon server that will refresh on changes.
 
 ## Getting a Copy of the Repo
 
