@@ -1,0 +1,3 @@
+node_modules
+src/seeding/dataTest.ndjson
+src/seeding/postgr.csv
