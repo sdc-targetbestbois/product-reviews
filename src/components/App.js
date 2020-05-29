@@ -90,8 +90,9 @@ export default class App extends Component {
   }
 
   getReviews(id) {
-    Axios.get(`http://rexscomponenet-env.eba-psqhbjkk.us-west-2.elasticbeanstalk.com/api/reviews/${id}`)
+    Axios.get(`http://ec2-3-17-164-199.us-east-2.compute.amazonaws.com:9005/api/reviews/${id}`)
     .then((response) => {
+      console.log(response)
       this.setState({
         allReviews: response.data,
         currentReviews: response.data
